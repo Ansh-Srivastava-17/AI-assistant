@@ -51,13 +51,6 @@ def takeCommand():
         return "None"
     return query
 
-def sendEmail(to, content):
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.ehlo()
-    server.starttls()
-    server.login('anjusri01@gmail.com', 'ansi@1705')
-    server.sendmail('anjusri01@@gmail.com', to, content)
-    server.close()
 
 if __name__ == "__main__":
     wishMe()
@@ -98,18 +91,6 @@ if __name__ == "__main__":
         elif 'open vs code' in query:
             codePath2 = "C:\\Users\\admin\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             os.startfile(codePath2)
-
-        elif 'email to papa' in query:
-            try:
-                speak("What should I say?")
-                content = takeCommand()
-                to = "avisri01@gmail.com"
-                sendEmail(to, content)
-                speak("Email has been sent!")
-            except Exception as e:
-                print(e)
-                speak("Sorry my friend  I am not able to send this email")
-
 
 
 
